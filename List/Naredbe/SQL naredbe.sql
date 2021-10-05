@@ -341,172 +341,182 @@ insert into proizvod (id_proizvod, naziv, cena, kolicina, fk_prodavnica, fk_mest
 insert into proizvod (id_proizvod, naziv, cena, kolicina, fk_prodavnica, fk_mesto) values (150, 'Simvastatin', 1784.34, 187, 7, 'Novi Sad');
 
 
-create table korisnik (
-	id_korisnik INT,
-	ime VARCHAR(50),
-	prezime VARCHAR(50),
-	username VARCHAR(50),
-	password VARCHAR(50),
-	bodovi INT,
-	fk_prodavnica INT
+
+CREATE TABLE korisnik(
+	id_korisnik INT PRIMARY KEY,
+	ime VARCHAR(50) NOT NULL,
+	prezime VARCHAR(50) NOT NULL,
+	username VARCHAR(50) UNIQUE NOT NULL,
+	password VARCHAR(50) UNIQUE NOT NULL,
+	bodovi INT NOT NULL,
+	fk_prodavnica INT NOT NULL,
+	fk_mesto VARCHAR(10) NOT NULL,
+	FOREIGN KEY (fk_prodavnica, fk_mesto) REFERENCES prodavnica(id_prodavnica, mesto)
 );
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (1, 'Graig', 'Aireton', 'gaireton0', 'OkhwUBFzC5Fn', 499, 119);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (2, 'Tabbie', 'Crocetti', 'tcrocetti1', '9nLFAUxLIj6', 861, 88);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (3, 'Bethanne', 'Heintz', 'bheintz2', 'PU6PsMYU', 921, 100);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (4, 'Rana', 'Ganders', 'rganders3', '0NCvfm26uy', 971, 139);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (5, 'Dannie', 'Dall', 'ddall4', 'lyubF1', 978, 125);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (6, 'Suellen', 'Mardy', 'smardy5', 'QPxeHPGdV7OZ', 965, 122);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (7, 'My', 'Dunbar', 'mdunbar6', 'cIZUhb2TU9', 233, 85);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (8, 'Derrek', 'Rooper', 'drooper7', 'mvPTGU', 894, 114);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (9, 'Hobard', 'Hedgeley', 'hhedgeley8', 'g22TCXZ6fx', 432, 62);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (10, 'Berk', 'Shepeard', 'bshepeard9', 'bzzG7M', 213, 141);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (11, 'Alane', 'Van der Krui', 'avanderkruia', 'X369kfcNwUJR', 269, 117);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (12, 'Frans', 'Malthus', 'fmalthusb', 'YOgSkG8t', 601, 95);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (13, 'Konstantine', 'Newbigging', 'knewbiggingc', 'JBaLdsAEMLVa', 214, 122);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (14, 'Chaddie', 'Creese', 'ccreesed', 'njTDZH5qYf', 76, 128);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (15, 'Royal', 'McCarroll', 'rmccarrolle', 'opkFbVNbAbU', 918, 11);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (16, 'Jennilee', 'Sheldrake', 'jsheldrakef', '1mbfD9PtR', 923, 58);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (17, 'Herculie', 'Garms', 'hgarmsg', '03Cc6BMVO', 551, 98);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (18, 'Karen', 'Tapley', 'ktapleyh', 'divuxMWucpf', 401, 143);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (19, 'Sherie', 'Yarrell', 'syarrelli', 't3PFAl3', 998, 105);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (20, 'Dino', 'Spinks', 'dspinksj', '3byLytI', 897, 44);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (21, 'Reider', 'Mougel', 'rmougelk', 'TO3Xbus', 767, 78);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (22, 'Bogey', 'Jedrych', 'bjedrychl', 'PGlFPA', 852, 78);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (23, 'Parnell', 'Earey', 'peareym', 'YC5jC3D1aWn', 780, 75);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (24, 'Trenna', 'Olivi', 'tolivin', 'hijWbjBPy4w', 203, 42);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (25, 'Jerry', 'Pearmain', 'jpearmaino', 'jgvNDW', 711, 113);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (26, 'Ania', 'Zellner', 'azellnerp', 'r5aimg', 617, 130);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (27, 'Axel', 'Wison', 'awisonq', 'HYoPBuq', 413, 60);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (28, 'Angele', 'Poveleye', 'apoveleyer', 'eM5C5RAf', 347, 37);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (29, 'Keelia', 'Leeds', 'kleedss', 'dPqKQZJDv', 837, 100);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (30, 'Dell', 'Lornsen', 'dlornsent', 'x2eFmrw94StH', 35, 70);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (31, 'Eileen', 'Berre', 'eberreu', 'lyjamSyLlfHx', 463, 24);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (32, 'Pepito', 'Gouldstraw', 'pgouldstrawv', 'ywgy3uF', 422, 43);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (33, 'Marchelle', 'Birkinshaw', 'mbirkinshaww', 'GElxs5gT6h', 756, 14);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (34, 'Niccolo', 'Pierucci', 'npieruccix', 'ZrSx6oTTJ', 71, 110);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (35, 'Corri', 'Carreck', 'ccarrecky', 'GlnX0I', 219, 73);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (36, 'Glenn', 'Everitt', 'geverittz', 'r1l56Z', 828, 106);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (37, 'Ossie', 'Jolland', 'ojolland10', 'xRkk5S', 347, 27);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (38, 'Emilee', 'Bourrel', 'ebourrel11', 'EV8Z1IxD', 568, 145);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (39, 'Annissa', 'Kitcat', 'akitcat12', 'QLkSelZI', 61, 137);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (40, 'Kathleen', 'Smithers', 'ksmithers13', 'LlOnQvH', 964, 119);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (41, 'Brooks', 'Reuven', 'breuven14', 'Go2M53', 769, 69);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (42, 'Brana', 'Kloska', 'bkloska15', '6rYwuB8UQCRl', 640, 45);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (43, 'Glynis', 'Hague', 'ghague16', '5rqKCty', 92, 77);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (44, 'Valerye', 'Dyche', 'vdyche17', 'xxyy5Q', 213, 140);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (45, 'Rich', 'Yannikov', 'ryannikov18', 'R75gWJzDP5', 564, 14);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (46, 'Jaquenetta', 'Whitford', 'jwhitford19', 'ugwbK1', 746, 67);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (47, 'Rickert', 'Ruddiman', 'rruddiman1a', 'KZEe3j', 353, 75);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (48, 'Twyla', 'Reihill', 'treihill1b', 'MAoVF8xQ', 412, 107);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (49, 'Theodosia', 'Kiehnlt', 'tkiehnlt1c', 'CxIuVStqH5Gr', 668, 85);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (50, 'Pinchas', 'McAlpin', 'pmcalpin1d', 'Bk59Xgd8WNg', 862, 127);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (51, 'Ileane', 'Hars', 'ihars1e', 'wBejyEt', 141, 121);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (52, 'Adena', 'Paolone', 'apaolone1f', 'Dvqk1Yu2s', 208, 46);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (53, 'Sebastian', 'Fitzsimon', 'sfitzsimon1g', 'Ks6XNwo7R', 835, 37);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (54, 'Bevvy', 'Kingaby', 'bkingaby1h', 'q5G5IqnnnLB', 409, 34);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (55, 'Patrice', 'Greave', 'pgreave1i', 'OqxiCBy7k', 749, 70);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (56, 'Esme', 'Kyle', 'ekyle1j', 'DiUQB0zzt', 729, 107);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (57, 'Mia', 'Ledford', 'mledford1k', 'lyOHcbKG951B', 580, 12);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (58, 'Annice', 'Withnall', 'awithnall1l', 'VQ6cgx36mJ0f', 887, 114);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (59, 'Maegan', 'McAllester', 'mmcallester1m', '51qVfFBql9', 401, 62);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (60, 'Derward', 'Tawn', 'dtawn1n', 'x2cKU9', 662, 86);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (61, 'Kristian', 'Fidoe', 'kfidoe1o', 'qm4LYZF10tV', 435, 61);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (62, 'Karlie', 'Conan', 'kconan1p', 'g6lhEKZNQU6', 854, 14);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (63, 'Elias', 'Zimek', 'ezimek1q', 'T9vRxRhai', 894, 90);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (64, 'Cobbie', 'Stubbes', 'cstubbes1r', 'fWNL6UXmr', 89, 65);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (65, 'Hamlin', 'Stoakley', 'hstoakley1s', 'kzzXdD', 6, 76);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (66, 'Henrieta', 'Frewer', 'hfrewer1t', 'BM7wa58CF', 537, 136);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (67, 'Cassie', 'De La Haye', 'cdelahaye1u', 'cjHvyLo0', 68, 143);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (68, 'Dixie', 'Phalip', 'dphalip1v', 'T93xtMsfTq', 853, 101);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (69, 'Dietrich', 'Bayley', 'dbayley1w', 'GIMdsN', 143, 32);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (70, 'Akim', 'Baglan', 'abaglan1x', 'w5X1aZ3S66eB', 378, 131);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (71, 'Kaitlyn', 'Tranfield', 'ktranfield1y', 'IZyhB0l', 3, 65);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (72, 'Shaine', 'De Moreno', 'sdemoreno1z', '1Xdvda7TedJC', 719, 127);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (73, 'Sheryl', 'Ginnaly', 'sginnaly20', '6a4ucX641', 609, 96);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (74, 'Osbert', 'Mcwhinnie', 'omcwhinnie21', 'vNi6ru', 911, 32);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (75, 'Nadya', 'Chettoe', 'nchettoe22', 'El1XsmtIvNX', 839, 84);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (76, 'Alaric', 'Iacovini', 'aiacovini23', 'IDOJNDvMQRR', 676, 22);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (77, 'Dory', 'Scotchmor', 'dscotchmor24', '3dVTXPTU', 505, 8);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (78, 'Ignacio', 'Sharpe', 'isharpe25', 'GCKJiva4RzfO', 462, 41);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (79, 'Isabelle', 'Thomton', 'ithomton26', 'jCxPu1IT', 181, 100);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (80, 'Martynne', 'Loche', 'mloche27', '6IZ9M5w6kd6d', 489, 59);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (81, 'Andrej', 'Domleo', 'adomleo28', 'ibG5JgFoY4x', 780, 116);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (82, 'Rica', 'Probbin', 'rprobbin29', 'fQ2N7udolsS', 550, 20);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (83, 'Conrado', 'Scarlett', 'cscarlett2a', 'vNZeb0fKhKC', 498, 71);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (84, 'Cinda', 'Shutt', 'cshutt2b', 'S0A4w9SNfce', 217, 30);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (85, 'Shaylyn', 'Zanni', 'szanni2c', 'XCMTfnOfle0', 733, 67);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (86, 'Simmonds', 'Simmonite', 'ssimmonite2d', 'IakKd2g', 569, 70);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (87, 'Cordy', 'Bernardotte', 'cbernardotte2e', 'CzZeXrkF', 407, 70);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (88, 'Erek', 'Retallack', 'eretallack2f', 'PlAhfcqfe6mz', 227, 98);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (89, 'Bennie', 'Towne', 'btowne2g', 'nwolm9K', 405, 5);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (90, 'Randie', 'Grafhom', 'rgrafhom2h', '2TKMzclDP', 546, 14);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (91, 'Levin', 'Crane', 'lcrane2i', 'x7vb5A05wjK2', 747, 92);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (92, 'Barty', 'Abramovicz', 'babramovicz2j', 'W8YX7NEDmh', 132, 104);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (93, 'Engelbert', 'Yosevitz', 'eyosevitz2k', 'b2vFx2W', 532, 20);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (94, 'Gare', 'Goldthorpe', 'ggoldthorpe2l', '2Byw8UWrbXe', 231, 53);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (95, 'Rasla', 'Doudny', 'rdoudny2m', 'nQSackNzkfz', 415, 79);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (96, 'Carlyn', 'Bankhurst', 'cbankhurst2n', '5h3f7kV7zVy8', 982, 119);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (97, 'Giffer', 'Badgers', 'gbadgers2o', 'Nl41FgcsD', 177, 9);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (98, 'Roxine', 'Chateau', 'rchateau2p', '15SoSCfSCq2', 413, 69);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (99, 'Daniele', 'Sive', 'dsive2q', '0SW9s77E', 129, 99);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (100, 'Sibel', 'Jacobssen', 'sjacobssen2r', 'O6B1xg12', 627, 69);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (101, 'Sheridan', 'Konmann', 'skonmann2s', 'I6nMtP43q2', 123, 74);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (102, 'Sadella', 'Rosenbush', 'srosenbush2t', 'BQJh1I5QPBi', 803, 74);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (103, 'Pacorro', 'Dumke', 'pdumke2u', '7HebGbCn6O', 9, 134);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (104, 'Ricki', 'Christol', 'rchristol2v', 'yV0Aa0faMr9', 351, 140);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (105, 'Gradey', 'Haeslier', 'ghaeslier2w', 'nv2kHIA', 950, 134);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (106, 'Georgiana', 'Masarrat', 'gmasarrat2x', 'M2FPBgL', 370, 76);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (107, 'Toma', 'Kauffman', 'tkauffman2y', 'MF0szFZUXeAy', 566, 83);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (108, 'Petra', 'Dinesen', 'pdinesen2z', 'yxJCRSD9rmIE', 455, 65);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (109, 'Westbrook', 'Osan', 'wosan30', 'mUEQRq4y', 39, 101);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (110, 'Zorina', 'MacMechan', 'zmacmechan31', 'P1fIADtD', 291, 33);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (111, 'Honoria', 'Carbery', 'hcarbery32', 'K6G84g8Xr', 435, 95);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (112, 'Enid', 'Dobble', 'edobble33', 'R3ocUf', 241, 45);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (113, 'Orin', 'Minchinton', 'ominchinton34', 'eJmuypIUqOOc', 966, 137);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (114, 'Chrysa', 'Hellwing', 'chellwing35', 'ta7XNk', 785, 27);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (115, 'Tildi', 'Mardell', 'tmardell36', 'eUCef4RBU', 259, 16);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (116, 'Kimble', 'Culshaw', 'kculshaw37', 'nqegY5S', 523, 61);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (117, 'Hilliard', 'Bointon', 'hbointon38', 'lV2OfUUn', 312, 125);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (118, 'Edgardo', 'Kordes', 'ekordes39', 'E0rQoKhXeB5', 523, 94);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (119, 'Ware', 'Delagua', 'wdelagua3a', 'wF5tj3T', 117, 62);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (120, 'Sutton', 'Emslie', 'semslie3b', 'CgP7wHD2bL', 699, 128);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (121, 'Andy', 'Nuschke', 'anuschke3c', 'QdUQ7BHWKsyQ', 324, 76);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (122, 'Cristy', 'Hollingsby', 'chollingsby3d', 'L9oolqDXGT', 709, 143);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (123, 'Branden', 'Gippes', 'bgippes3e', 'bmTzOm', 442, 145);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (124, 'Nona', 'Grzelczak', 'ngrzelczak3f', '9ANzoC', 873, 102);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (125, 'Pammi', 'Greenman', 'pgreenman3g', 'ccs3f7X', 37, 117);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (126, 'Lucila', 'Kubicki', 'lkubicki3h', 'H5PBLzFvt', 424, 29);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (127, 'Kerrin', 'Greenshields', 'kgreenshields3i', 'wq5TXzegbWS', 22, 124);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (128, 'Dorie', 'Hubbucke', 'dhubbucke3j', 'Caylty70oBjS', 151, 97);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (129, 'Allissa', 'Moggie', 'amoggie3k', 'aogTKfo', 246, 142);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (130, 'Arlette', 'Van Eeden', 'avaneeden3l', 'uK0S7cR', 643, 129);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (131, 'Kirk', 'Hannay', 'khannay3m', 'hYoQHgaf4', 190, 47);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (132, 'Renell', 'Saller', 'rsaller3n', 'hYmCjtQRH6', 936, 20);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (133, 'Fiorenze', 'Sowray', 'fsowray3o', 'iOp7mq', 710, 119);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (134, 'Timoteo', 'Jesty', 'tjesty3p', '1NUibw2oI4', 985, 70);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (135, 'Vallie', 'Reggler', 'vreggler3q', 'TbNzKbQLweE4', 496, 110);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (136, 'Fredrick', 'Maryin', 'fmaryin3r', 'TPedhU7', 925, 6);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (137, 'Francesca', 'Richardeau', 'frichardeau3s', 'KnApDsZv', 295, 11);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (138, 'Bibbye', 'Ensten', 'bensten3t', 'uqHOT54ar3a', 49, 47);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (139, 'Justina', 'Bertelmot', 'jbertelmot3u', 'YZZ54z3MyDt', 887, 124);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (140, 'Marylou', 'Emtage', 'memtage3v', 'iEJzSP', 538, 136);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (141, 'Susie', 'Toxell', 'stoxell3w', 'zEKyI1FXNaUq', 916, 12);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (142, 'Jacki', 'Glidden', 'jglidden3x', 'sVh9BMy', 725, 86);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (143, 'Gallard', 'Trice', 'gtrice3y', 'SXlf3O9EfBb1', 168, 81);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (144, 'Baird', 'Newe', 'bnewe3z', 'BLW74TO', 848, 92);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (145, 'Rubetta', 'Cardillo', 'rcardillo40', 'DREZ6oGCS85m', 306, 114);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (146, 'Reeba', 'Tilney', 'rtilney41', 'W58S8ksJb', 295, 19);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (147, 'Jordon', 'Blackaby', 'jblackaby42', 'qbldVZ', 80, 17);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (148, 'Esther', 'Kepp', 'ekepp43', 'JSzMJR', 27, 139);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (149, 'Amerigo', 'McArthur', 'amcarthur44', 'iDTmGWqs', 769, 73);
-insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica) values (150, 'Virgilio', 'McLurg', 'vmclurg45', 'pr43CI3', 3, 111);
 
 
-create table mejl (
-	id_mejl INT,
-	adresa VARCHAR(50),
-	fk_korisnik INT
+
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (1, 'Graig', 'Aireton', 'gaireton0', 'OkhwUBFzC5Fn', 499, 119, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (2, 'Tabbie', 'Crocetti', 'tcrocetti1', '9nLFAUxLIj6', 861, 88, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (3, 'Bethanne', 'Heintz', 'bheintz2', 'PU6PsMYU', 921, 100, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (4, 'Rana', 'Ganders', 'rganders3', '0NCvfm26uy', 971, 139, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (5, 'Dannie', 'Dall', 'ddall4', 'lyubF1', 978, 125, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (6, 'Suellen', 'Mardy', 'smardy5', 'QPxeHPGdV7OZ', 965, 122, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (7, 'My', 'Dunbar', 'mdunbar6', 'cIZUhb2TU9', 233, 85, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (8, 'Derrek', 'Rooper', 'drooper7', 'mvPTGU', 894, 114, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (9, 'Hobard', 'Hedgeley', 'hhedgeley8', 'g22TCXZ6fx', 432, 62, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (10, 'Berk', 'Shepeard', 'bshepeard9', 'bzzG7M', 213, 141, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (11, 'Alane', 'Van der Krui', 'avanderkruia', 'X369kfcNwUJR', 269, 117, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (12, 'Frans', 'Malthus', 'fmalthusb', 'YOgSkG8t', 601, 95, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (13, 'Konstantine', 'Newbigging', 'knewbiggingc', 'JBaLdsAEMLVa', 214, 122, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (14, 'Chaddie', 'Creese', 'ccreesed', 'njTDZH5qYf', 76, 128, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (15, 'Royal', 'McCarroll', 'rmccarrolle', 'opkFbVNbAbU', 918, 11, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (16, 'Jennilee', 'Sheldrake', 'jsheldrakef', '1mbfD9PtR', 923, 58, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (17, 'Herculie', 'Garms', 'hgarmsg', '03Cc6BMVO', 551, 98, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (18, 'Karen', 'Tapley', 'ktapleyh', 'divuxMWucpf', 401, 143, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (19, 'Sherie', 'Yarrell', 'syarrelli', 't3PFAl3', 998, 105, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (20, 'Dino', 'Spinks', 'dspinksj', '3byLytI', 897, 44, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (21, 'Reider', 'Mougel', 'rmougelk', 'TO3Xbus', 767, 78, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (22, 'Bogey', 'Jedrych', 'bjedrychl', 'PGlFPA', 852, 78, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (23, 'Parnell', 'Earey', 'peareym', 'YC5jC3D1aWn', 780, 75, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (24, 'Trenna', 'Olivi', 'tolivin', 'hijWbjBPy4w', 203, 42, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (25, 'Jerry', 'Pearmain', 'jpearmaino', 'jgvNDW', 711, 113, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (26, 'Ania', 'Zellner', 'azellnerp', 'r5aimg', 617, 130, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (27, 'Axel', 'Wison', 'awisonq', 'HYoPBuq', 413, 60, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (28, 'Angele', 'Poveleye', 'apoveleyer', 'eM5C5RAf', 347, 37, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (29, 'Keelia', 'Leeds', 'kleedss', 'dPqKQZJDv', 837, 100, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (30, 'Dell', 'Lornsen', 'dlornsent', 'x2eFmrw94StH', 35, 70, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (31, 'Eileen', 'Berre', 'eberreu', 'lyjamSyLlfHx', 463, 24, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (32, 'Pepito', 'Gouldstraw', 'pgouldstrawv', 'ywgy3uF', 422, 43, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (33, 'Marchelle', 'Birkinshaw', 'mbirkinshaww', 'GElxs5gT6h', 756, 14, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (34, 'Niccolo', 'Pierucci', 'npieruccix', 'ZrSx6oTTJ', 71, 110, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (35, 'Corri', 'Carreck', 'ccarrecky', 'GlnX0I', 219, 73, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (36, 'Glenn', 'Everitt', 'geverittz', 'r1l56Z', 828, 106, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (37, 'Ossie', 'Jolland', 'ojolland10', 'xRkk5S', 347, 27, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (38, 'Emilee', 'Bourrel', 'ebourrel11', 'EV8Z1IxD', 568, 145, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (39, 'Annissa', 'Kitcat', 'akitcat12', 'QLkSelZI', 61, 137, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (40, 'Kathleen', 'Smithers', 'ksmithers13', 'LlOnQvH', 964, 119, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (41, 'Brooks', 'Reuven', 'breuven14', 'Go2M53', 769, 69, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (42, 'Brana', 'Kloska', 'bkloska15', '6rYwuB8UQCRl', 640, 45, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (43, 'Glynis', 'Hague', 'ghague16', '5rqKCty', 92, 77, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (44, 'Valerye', 'Dyche', 'vdyche17', 'xxyy5Q', 213, 140, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (45, 'Rich', 'Yannikov', 'ryannikov18', 'R75gWJzDP5', 564, 14, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (46, 'Jaquenetta', 'Whitford', 'jwhitford19', 'ugwbK1', 746, 67, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (47, 'Rickert', 'Ruddiman', 'rruddiman1a', 'KZEe3j', 353, 75, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (48, 'Twyla', 'Reihill', 'treihill1b', 'MAoVF8xQ', 412, 107, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (49, 'Theodosia', 'Kiehnlt', 'tkiehnlt1c', 'CxIuVStqH5Gr', 668, 85, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (50, 'Pinchas', 'McAlpin', 'pmcalpin1d', 'Bk59Xgd8WNg', 862, 127, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (51, 'Ileane', 'Hars', 'ihars1e', 'wBejyEt', 141, 121, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (52, 'Adena', 'Paolone', 'apaolone1f', 'Dvqk1Yu2s', 208, 46, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (53, 'Sebastian', 'Fitzsimon', 'sfitzsimon1g', 'Ks6XNwo7R', 835, 37, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (54, 'Bevvy', 'Kingaby', 'bkingaby1h', 'q5G5IqnnnLB', 409, 34, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (55, 'Patrice', 'Greave', 'pgreave1i', 'OqxiCBy7k', 749, 70, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (56, 'Esme', 'Kyle', 'ekyle1j', 'DiUQB0zzt', 729, 107, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (57, 'Mia', 'Ledford', 'mledford1k', 'lyOHcbKG951B', 580, 12, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (58, 'Annice', 'Withnall', 'awithnall1l', 'VQ6cgx36mJ0f', 887, 114, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (59, 'Maegan', 'McAllester', 'mmcallester1m', '51qVfFBql9', 401, 62, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (60, 'Derward', 'Tawn', 'dtawn1n', 'x2cKU9', 662, 86, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (61, 'Kristian', 'Fidoe', 'kfidoe1o', 'qm4LYZF10tV', 435, 61, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (62, 'Karlie', 'Conan', 'kconan1p', 'g6lhEKZNQU6', 854, 14, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (63, 'Elias', 'Zimek', 'ezimek1q', 'T9vRxRhai', 894, 90, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (64, 'Cobbie', 'Stubbes', 'cstubbes1r', 'fWNL6UXmr', 89, 65, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (65, 'Hamlin', 'Stoakley', 'hstoakley1s', 'kzzXdD', 6, 76, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (66, 'Henrieta', 'Frewer', 'hfrewer1t', 'BM7wa58CF', 537, 136, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (67, 'Cassie', 'De La Haye', 'cdelahaye1u', 'cjHvyLo0', 68, 143, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (68, 'Dixie', 'Phalip', 'dphalip1v', 'T93xtMsfTq', 853, 101, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (69, 'Dietrich', 'Bayley', 'dbayley1w', 'GIMdsN', 143, 32, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (70, 'Akim', 'Baglan', 'abaglan1x', 'w5X1aZ3S66eB', 378, 131, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (71, 'Kaitlyn', 'Tranfield', 'ktranfield1y', 'IZyhB0l', 3, 65, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (72, 'Shaine', 'De Moreno', 'sdemoreno1z', '1Xdvda7TedJC', 719, 127, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (73, 'Sheryl', 'Ginnaly', 'sginnaly20', '6a4ucX641', 609, 96, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (74, 'Osbert', 'Mcwhinnie', 'omcwhinnie21', 'vNi6ru', 911, 32, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (75, 'Nadya', 'Chettoe', 'nchettoe22', 'El1XsmtIvNX', 839, 84, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (76, 'Alaric', 'Iacovini', 'aiacovini23', 'IDOJNDvMQRR', 676, 22, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (77, 'Dory', 'Scotchmor', 'dscotchmor24', '3dVTXPTU', 505, 8, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (78, 'Ignacio', 'Sharpe', 'isharpe25', 'GCKJiva4RzfO', 462, 41, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (79, 'Isabelle', 'Thomton', 'ithomton26', 'jCxPu1IT', 181, 100, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (80, 'Martynne', 'Loche', 'mloche27', '6IZ9M5w6kd6d', 489, 59, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (81, 'Andrej', 'Domleo', 'adomleo28', 'ibG5JgFoY4x', 780, 116, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (82, 'Rica', 'Probbin', 'rprobbin29', 'fQ2N7udolsS', 550, 20, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (83, 'Conrado', 'Scarlett', 'cscarlett2a', 'vNZeb0fKhKC', 498, 71, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (84, 'Cinda', 'Shutt', 'cshutt2b', 'S0A4w9SNfce', 217, 30, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (85, 'Shaylyn', 'Zanni', 'szanni2c', 'XCMTfnOfle0', 733, 67, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (86, 'Simmonds', 'Simmonite', 'ssimmonite2d', 'IakKd2g', 569, 70, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (87, 'Cordy', 'Bernardotte', 'cbernardotte2e', 'CzZeXrkF', 407, 70, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (88, 'Erek', 'Retallack', 'eretallack2f', 'PlAhfcqfe6mz', 227, 98, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (89, 'Bennie', 'Towne', 'btowne2g', 'nwolm9K', 405, 5, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (90, 'Randie', 'Grafhom', 'rgrafhom2h', '2TKMzclDP', 546, 14, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (91, 'Levin', 'Crane', 'lcrane2i', 'x7vb5A05wjK2', 747, 92, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (92, 'Barty', 'Abramovicz', 'babramovicz2j', 'W8YX7NEDmh', 132, 104, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (93, 'Engelbert', 'Yosevitz', 'eyosevitz2k', 'b2vFx2W', 532, 20, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (94, 'Gare', 'Goldthorpe', 'ggoldthorpe2l', '2Byw8UWrbXe', 231, 53, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (95, 'Rasla', 'Doudny', 'rdoudny2m', 'nQSackNzkfz', 415, 79, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (96, 'Carlyn', 'Bankhurst', 'cbankhurst2n', '5h3f7kV7zVy8', 982, 119, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (97, 'Giffer', 'Badgers', 'gbadgers2o', 'Nl41FgcsD', 177, 9, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (98, 'Roxine', 'Chateau', 'rchateau2p', '15SoSCfSCq2', 413, 69, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (99, 'Daniele', 'Sive', 'dsive2q', '0SW9s77E', 129, 99, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (100, 'Sibel', 'Jacobssen', 'sjacobssen2r', 'O6B1xg12', 627, 69, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (101, 'Sheridan', 'Konmann', 'skonmann2s', 'I6nMtP43q2', 123, 74, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (102, 'Sadella', 'Rosenbush', 'srosenbush2t', 'BQJh1I5QPBi', 803, 74, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (103, 'Pacorro', 'Dumke', 'pdumke2u', '7HebGbCn6O', 9, 134, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (104, 'Ricki', 'Christol', 'rchristol2v', 'yV0Aa0faMr9', 351, 140, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (105, 'Gradey', 'Haeslier', 'ghaeslier2w', 'nv2kHIA', 950, 134, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (106, 'Georgiana', 'Masarrat', 'gmasarrat2x', 'M2FPBgL', 370, 76, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (107, 'Toma', 'Kauffman', 'tkauffman2y', 'MF0szFZUXeAy', 566, 83, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (108, 'Petra', 'Dinesen', 'pdinesen2z', 'yxJCRSD9rmIE', 455, 65, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (109, 'Westbrook', 'Osan', 'wosan30', 'mUEQRq4y', 39, 101, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (110, 'Zorina', 'MacMechan', 'zmacmechan31', 'P1fIADtD', 291, 33, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (111, 'Honoria', 'Carbery', 'hcarbery32', 'K6G84g8Xr', 435, 95, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (112, 'Enid', 'Dobble', 'edobble33', 'R3ocUf', 241, 45, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (113, 'Orin', 'Minchinton', 'ominchinton34', 'eJmuypIUqOOc', 966, 137, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (114, 'Chrysa', 'Hellwing', 'chellwing35', 'ta7XNk', 785, 27, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (115, 'Tildi', 'Mardell', 'tmardell36', 'eUCef4RBU', 259, 16, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (116, 'Kimble', 'Culshaw', 'kculshaw37', 'nqegY5S', 523, 61, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (117, 'Hilliard', 'Bointon', 'hbointon38', 'lV2OfUUn', 312, 125, 'Subotica');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (118, 'Edgardo', 'Kordes', 'ekordes39', 'E0rQoKhXeB5', 523, 94, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (119, 'Ware', 'Delagua', 'wdelagua3a', 'wF5tj3T', 117, 62, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (120, 'Sutton', 'Emslie', 'semslie3b', 'CgP7wHD2bL', 699, 128, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (121, 'Andy', 'Nuschke', 'anuschke3c', 'QdUQ7BHWKsyQ', 324, 76, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (122, 'Cristy', 'Hollingsby', 'chollingsby3d', 'L9oolqDXGT', 709, 143, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (123, 'Branden', 'Gippes', 'bgippes3e', 'bmTzOm', 442, 145, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (124, 'Nona', 'Grzelczak', 'ngrzelczak3f', '9ANzoC', 873, 102, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (125, 'Pammi', 'Greenman', 'pgreenman3g', 'ccs3f7X', 37, 117, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (126, 'Lucila', 'Kubicki', 'lkubicki3h', 'H5PBLzFvt', 424, 29, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (127, 'Kerrin', 'Greenshields', 'kgreenshields3i', 'wq5TXzegbWS', 22, 124, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (128, 'Dorie', 'Hubbucke', 'dhubbucke3j', 'Caylty70oBjS', 151, 97, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (129, 'Allissa', 'Moggie', 'amoggie3k', 'aogTKfo', 246, 142, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (130, 'Arlette', 'Van Eeden', 'avaneeden3l', 'uK0S7cR', 643, 129, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (131, 'Kirk', 'Hannay', 'khannay3m', 'hYoQHgaf4', 190, 47, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (132, 'Renell', 'Saller', 'rsaller3n', 'hYmCjtQRH6', 936, 20, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (133, 'Fiorenze', 'Sowray', 'fsowray3o', 'iOp7mq', 710, 119, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (134, 'Timoteo', 'Jesty', 'tjesty3p', '1NUibw2oI4', 985, 70, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (135, 'Vallie', 'Reggler', 'vreggler3q', 'TbNzKbQLweE4', 496, 110, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (136, 'Fredrick', 'Maryin', 'fmaryin3r', 'TPedhU7', 925, 6, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (137, 'Francesca', 'Richardeau', 'frichardeau3s', 'KnApDsZv', 295, 11, 'Leskovac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (138, 'Bibbye', 'Ensten', 'bensten3t', 'uqHOT54ar3a', 49, 47, 'Novi Sad');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (139, 'Justina', 'Bertelmot', 'jbertelmot3u', 'YZZ54z3MyDt', 887, 124, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (140, 'Marylou', 'Emtage', 'memtage3v', 'iEJzSP', 538, 136, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (141, 'Susie', 'Toxell', 'stoxell3w', 'zEKyI1FXNaUq', 916, 12, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (142, 'Jacki', 'Glidden', 'jglidden3x', 'sVh9BMy', 725, 86, 'Beograd');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (143, 'Gallard', 'Trice', 'gtrice3y', 'SXlf3O9EfBb1', 168, 81, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (144, 'Baird', 'Newe', 'bnewe3z', 'BLW74TO', 848, 92, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (145, 'Rubetta', 'Cardillo', 'rcardillo40', 'DREZ6oGCS85m', 306, 114, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (146, 'Reeba', 'Tilney', 'rtilney41', 'W58S8ksJb', 295, 19, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (147, 'Jordon', 'Blackaby', 'jblackaby42', 'qbldVZ', 80, 17, 'Kragujevac');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (148, 'Esther', 'Kepp', 'ekepp43', 'JSzMJR', 27, 139, 'Nis');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (149, 'Amerigo', 'McArthur', 'amcarthur44', 'iDTmGWqs', 769, 73, 'Cacak');
+insert into korisnik (id_korisnik, ime, prezime, username, password, bodovi, fk_prodavnica, fk_mesto) values (150, 'Virgilio', 'McLurg', 'vmclurg45', 'pr43CI3', 3, 111, 'Subotica');
+
+
+
+CREATE TABLE mejl(
+	id_mejl INT PRIMARY KEY,
+	adresa VARCHAR(50) NOT NULL,
+	fk_korisnik INT NOT NULL,
+	FOREIGN KEY (fk_korisnik) REFERENCES korisnik(id_korisnik)
 );
+
+
 insert into mejl (id_mejl, adresa, fk_korisnik) values (1, 'bbankes0@scientificamerican.com', 115);
 insert into mejl (id_mejl, adresa, fk_korisnik) values (2, 'mmessum1@canalblog.com', 94);
 insert into mejl (id_mejl, adresa, fk_korisnik) values (3, 'hphilippon2@hatena.ne.jp', 15);
@@ -660,11 +670,15 @@ insert into mejl (id_mejl, adresa, fk_korisnik) values (150, 'jloiterton45@mozil
 
 
 
-create table telefon (
-	id_telefon INT,
-	broj VARCHAR(50),
-	fk_korisnik INT
+CREATE TABLE telefon(
+	id_telefon INT PRIMARY KEY,
+	broj VARCHAR(50) NOT NULL,
+	fk_korisnik INT NOT NULL,
+	FOREIGN KEY (fk_korisnik) REFERENCES korisnik(id_korisnik)
 );
+
+
+
 insert into telefon (id_telefon, broj, fk_korisnik) values (1, '(798) 3972716', 133);
 insert into telefon (id_telefon, broj, fk_korisnik) values (2, '(665) 5472739', 24);
 insert into telefon (id_telefon, broj, fk_korisnik) values (3, '(368) 3970076', 69);
@@ -815,4 +829,3 @@ insert into telefon (id_telefon, broj, fk_korisnik) values (147, '(390) 3725282'
 insert into telefon (id_telefon, broj, fk_korisnik) values (148, '(763) 5112055', 97);
 insert into telefon (id_telefon, broj, fk_korisnik) values (149, '(442) 8531683', 49);
 insert into telefon (id_telefon, broj, fk_korisnik) values (150, '(112) 5412483', 96);
-

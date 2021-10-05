@@ -33,8 +33,7 @@ declare
 	tim trkaci.naziv_tima%type := null;
 begin
 	perform naziv_tima into tim
-	from trkaci
-	--where id_trkaca = new.id_trkaca; 
+	from trkaci;
 	
 	execute 'insert into trkaci_' || new.naziv_tima || ' values ( $1.* )' using new;
 	return null;
